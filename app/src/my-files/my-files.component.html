@@ -1,0 +1,27 @@
+<div id="my-files">
+	<h2>My Files</h2>
+	<ul>
+		<li *ngFor="let upload of uploads" class="upload">
+			
+			<span class="status"><p>new</p></span>	
+			
+			<div class="file-info">
+				<p class="file-name">{{upload}}</p>
+				<span>Uploaded on 9/22/16</span>
+			</div>
+
+			<div class="download-delete">
+				<div class="download">
+					<span class="icon download">&darr;</span>
+					<p>download</p>
+				</div>
+
+				<div (click)="delete(upload)" class="delete">
+					<span class="icon clear">&times;</span>
+					<p>delete</p>
+				</div>
+			</div>
+			
+		</li>
+	</ul>
+</div>	

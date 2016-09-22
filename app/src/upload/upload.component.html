@@ -1,0 +1,35 @@
+<div id="upload">
+	<h2>{{uploadStatus}}</h2>
+	<p class="feedback">{{feedback}}</p>
+	<div *ngIf="hasFiles" [class.uploading]="uploading" [class.uploaded]="uploaded" class="file-holder">
+		<ul>
+			<li class="file">{{uploadName}}
+				<span (click)="reset()" *ngIf="!uploaded" class="icon clear">&times;</span>
+				<span (click)="reset()" *ngIf="uploaded" class="icon check">&#10004;</span>
+				<div *ngIf="uploading" id="progress">
+					<span id="percentage">{{percentage}}%</span>
+					<span id="progress-bar"></span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div *ngIf="!hasFiles" class="arrow">
+		<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			 viewBox="0 0 287.7 322.9" style="enable-background:new 0 0 287.7 322.9;" xml:space="preserve">
+		<g>
+		</g>
+		<path d="M69,4l-0.2,171.8c0,2.2-1.8,4-4,4H4c-3.6,0-5.4,4.4-2.8,6.9l140.2,135.2c1.6,1.5,4,1.5,5.6,0l139.6-135.2
+			c2.6-2.5,0.8-6.9-2.8-6.9h-60.9c-2.2,0-4-1.8-4-4L219,4c0-2.2-1.8-4-4-4L73,0C70.8,0,69,1.8,69,4z"/>
+		</svg>
+	</div>
+
+	<div *ngIf="uploaded || !uploading && !hasFiles" >
+		<input (change)="update($event.target.value)" type="file" name="file" id="file" class="inputfile" />
+		<label class="btn" for="file">{{selectFileText}}</label>
+	</div>
+
+	<button *ngIf="hasFiles && !uploading && !uploaded" (click)="upload()" class="btn">Upload File</button>
+
+
+	<span *ngIf="!hasFiles" class="info">50K max</span>
+</div>	

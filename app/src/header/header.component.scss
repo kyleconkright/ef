@@ -1,0 +1,14 @@
+@import '../variables';
+
+header {
+	background: $blue-brand;
+	border-bottom: .2rem solid $blue-accent; //20% of root font size (16px * .2 = 3.2)
+	text-align: center;
+	padding: 1.75rem;
+	color: white;
+	font-size: 3rem;
+	svg {
+		fill: $white-brand;
+		height: 3rem;
+	}
+}

@@ -1,0 +1,67 @@
+@import '../variables';
+
+#action-bar {
+	background: $med-grey;
+	position: relative;
+	text-align: center;
+	.close {
+		position: absolute;
+		right: 1rem;
+		top: .25rem;
+		color: $dark-grey;
+		font-size: 2rem;
+	}
+	.router-link-active { background-color: red; }
+	a {
+		display: inline-block;
+		min-width: 120px;
+		margin: 0 .2rem;
+		padding: 1rem 0 0;
+		transform: .2s border;
+		.link-border {
+			position: relative;
+			margin: .8rem auto 0;
+			height: .2rem;
+			width: 0;
+			background: $med-grey;
+			transition: .2s width linear;	
+		}
+		&:hover, &.active {
+			font-weight: 400;
+			.link-border {
+				width: 100%;
+				background: $blue-font;
+			}
+		}
+		&:hover:not(.active) {
+			.link-border {
+				animation: bounce .5s infinite;
+			}
+		}
+	}
+	.upload-count {
+		position: absolute;
+		font-size: .5rem;
+		font-weight: bold;
+		color: white;
+		top: .5rem;
+		background: coral;
+		height: 1rem;
+		width: 1rem;
+		text-indent: -1px;
+		line-height: 1rem;
+		border-radius: 50%;
+	}
+}
+
+@keyframes bounce {
+	0% {
+		width: 60%;
+	}
+	50% {
+		width: 70%;
+	}
+	100% {
+		width: 60%;
+	}
+}

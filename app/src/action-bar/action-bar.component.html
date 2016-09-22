@@ -1,0 +1,9 @@
+<div id="action-bar">
+	<a [routerLink]="['/upload']" routerLinkActive="active">Upload
+		<div class="link-border"></div></a>
+
+	<a [routerLink]="['/myfiles']" routerLinkActive="active">My Files <span *ngIf="uploads" class="upload-count" >{{uploads}}</span>
+		<div class="link-border"></div></a>
+
+	<span class="close">&times;</span>
+</div>	

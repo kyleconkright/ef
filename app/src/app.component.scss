@@ -1,0 +1,93 @@
+@import 'variables';
+
+/* RESETS */
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	color: inherit;
+	box-sizing: border-box;
+	font-weight: inherit;
+	list-style-type: none;
+}
+
+body {
+	font-family: Lato;
+	color: $blue-font;
+	background: $light-grey;
+	font-weight: 300;
+}
+
+/* MAIN FILE UPLOAD BOX */
+#loader {
+	background: $white-brand;
+	width: 40%;
+	min-width: 400px;
+	max-width: 650px;
+	min-height: 400px;
+	margin: 4rem auto;
+	border-radius: 3px;
+	box-shadow: 0 0 4px rgba(0,0,0,.075);
+	text-align: center;
+	position: relative; /* FOR DROP IN ANIMATION */
+	animation: dropIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000); /* easeOutQuart */
+	h2 {
+		margin: 2rem 0;
+		font-weight: 700;
+	}
+}
+
+/* APP BUTTONS + INPUT[FILE] OVERRIDE */
+.btn {
+	background: $blue-brand;
+	color: $white-brand;
+	border: 1px solid #3D7DC5;
+	border-radius: 2px;
+	display: inline-block;
+	margin: 1rem auto;
+	padding: 1rem 1.5rem;
+	text-transform: uppercase;
+	font-size: .75rem; /* 12px */
+	cursor: pointer;
+	transition: .2s background;
+	&:hover {
+		background: $blue-accent;	
+	}
+}
+
+.inputfile { /* hide ugly default button */
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+/* SECONDARY INFO */
+span.info {
+	display: block;
+	color: $dark-grey;
+	font-size: .75rem; /* 12px */
+}
+
+.hidden {
+	display: none;
+}
+
+
+@keyframes dropIn {
+	0% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 0;
+		top: -50px;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		top: 0;
+	}
+}

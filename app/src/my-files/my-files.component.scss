@@ -1,0 +1,55 @@
+@import '../variables';
+
+#my-files {
+	.upload * > :not(.file-name) {
+		font-size: .75rem;
+	}
+	li.upload {
+		display: flex;
+		justify-content: center;
+		background: $upload-background;
+		color: $dark-grey;
+		padding: 1rem;
+		border: solid $light-grey;
+		border-width: 1px 0;
+		> * {
+		    flex: 1;
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		    text-align: center;
+
+		}
+		.file-info {
+			flex: 2;
+			text-align: left;
+			.file-name {
+				font-weight: 700;
+			}
+		}
+		.status p {
+			background: #FB7D6C;
+			display: block;
+			margin: 0 auto;
+			padding: 3px;
+			border-radius: 2px;
+			width: 50%;
+			max-width: 40px;
+			color: white;
+			font-size: .65rem;
+			font-weight: 700;
+		}
+		.download-delete {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			color: $blue-brand;
+			font-weight: 700;
+			cursor: pointer;
+			
+			> :not(.download) {
+				color: #FB7D6C;
+			}
+		}
+	}
+}
